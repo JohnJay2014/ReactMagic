@@ -2,6 +2,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
+更新JSON是比较重要的一件事
+其次是熟悉react
+
 In the project directory, you can run:
 
 ### `npm start`
