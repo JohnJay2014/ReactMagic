@@ -2,12 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import List from './List';
 import * as serviceWorker from './serviceWorker';
-import list from './con0118.json'
 
-const element = <App dialogue={list} />
+const element = <App />
+const leftElement = <List />
+
 //React 默认会进行HTML的转义， 避免XSS攻击
+
 ReactDOM.render(element, document.getElementById('root'));
+ReactDOM.render(leftElement, document.getElementById('list'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

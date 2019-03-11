@@ -4,6 +4,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 更新JSON是比较重要的一件事
 其次是熟悉react
+每一种类型的对话使用一种颜色
+更新错误示范的tab 使用新的组件
+
+目前生成三种组件 左边目录
 
 In the project directory, you can run:
 
