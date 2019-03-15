@@ -39,7 +39,6 @@ function Yuqi() {
                         <div class="panel-body">
                             <blockquote>
                                 <p>{item.lw[0]}</p>
-                                <small> <cite title="Source Title"></cite></small>
                             </blockquote>
                             <div></div>
                             <div class="comment-action m-t-sm">

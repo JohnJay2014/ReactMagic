@@ -31,7 +31,7 @@ class List extends React.Component {
             <nav class="nav-primary hidden-xs">
                 <ul class="nav bg clearfix">
                     <li class="hidden-nav-xs padder m-t m-b-sm text-xs text-muted">
-                        Discover
+                        分类
                         </li>
                     <li>
                         <a onClick={this.addIndex}>
