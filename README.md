@@ -3,6 +3,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Available Scripts
 
 更新JSON是比较重要的一件事
+著作权了解
+
 其次是熟悉react
 每一种类型的对话使用一种颜色
 更新错误示范的tab 使用新的组件

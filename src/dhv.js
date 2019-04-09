@@ -51,6 +51,47 @@ function DHV(props) {
                     </article>
                 </section>
             );
+        } else if (item.lw.length == 3) {
+            return (
+                <section class="chat-list panel-body">
+                    <article id={"chat-id-" + i} class="chat-item left">
+                        <a href="#" class="pull-left thumb-sm avatar"><img src={item.fimg} alt="..." /></a>
+                        <section class="chat-body">
+                            <div class="panel b-light text-sm m-b-none">
+                                <div class="panel-body">
+                                    <span class="arrow left"></span>
+                                    <p class="m-b-none">{item.lw[0]}</p>
+                                </div>
+                            </div>
+                            <small class="text-muted"><i class="fa fa-ok text-success"></i>{item.jx[0]}</small>
+                        </section>
+                    </article>
+                    <article id="chat-id-2" class="chat-item right">
+                        <a href="#" class="pull-right thumb-sm avatar"><img src={item.simg} class="img-circle" alt="..." /></a>
+                        <section class="chat-body">
+                            <div class="panel bg-light text-sm m-b-none">
+                                <div class="panel-body">
+                                    <span class="arrow right"></span>
+                                    <p class="m-b-none">{item.lw[1]}</p>
+                                </div>
+                            </div>
+                            <small class="text-muted">{item.jx[1]}</small>
+                        </section>
+                    </article>
+                    <article id={"chat-id-" + i} class="chat-item left">
+                        <a href="#" class="pull-left thumb-sm avatar"><img src={item.fimg} alt="..." /></a>
+                        <section class="chat-body">
+                            <div class="panel b-light text-sm m-b-none">
+                                <div class="panel-body">
+                                    <span class="arrow left"></span>
+                                    <p class="m-b-none">{item.lw[2]}</p>
+                                </div>
+                            </div>
+                            <small class="text-muted"><i class="fa fa-ok text-success"></i>{item.jx[2]}</small>
+                        </section>
+                    </article>
+                </section>
+            );
         }
 
     });

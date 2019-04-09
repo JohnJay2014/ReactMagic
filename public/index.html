@@ -195,7 +195,7 @@
                   <div id="root"></div>
                 </section>
                 <footer class="footer bg-dark">
-                  <form class="" role="search">
+                  <form id="search_bottom" role="search" action>
                     <div class="form-group clearfix m-b-none">
                       <div class="input-group m-t m-b">
                         <span class="input-group-btn">
@@ -233,13 +233,27 @@
     $("#search_top").submit(
       function search(oEvent) {
         var str = oEvent.currentTarget.elements[1].value;
-        fireKeyEvent();
+        //fireKeyEvent();
         //select(str);
-        //txt.scrollIntoView();
-        //window.find(oEvent.currentTarget.elements[1].value, true, false, false, true, false, true);
+        window.find(str, true, false, true, true, false, true);
+        var txt = window.getSelection();
+        var p = txt.focusNode.parentNode;
+        p.scrollIntoView({block:"end"});
         return false;
       }
-
+    );
+    $("#search_bottom").submit(
+      function search(oEvent) {
+        var str = oEvent.currentTarget.elements[1].value;
+        //fireKeyEvent();
+        //select(str);
+        //向上搜索
+        window.find(str, true, true, true, true, false, true);
+        var txt = window.getSelection();
+        var p = txt.focusNode.parentNode;
+        p.scrollIntoView({block:"end"});
+        return false;
+      }
     );
     document.addEventListener("keydown", function (Events) {
       console.log(Events.keyCode);
@@ -260,7 +274,8 @@
           //只会选中第一个
         } else {
           var word = window.getSelection();
-          word.collapse(document.body, 0);
+          //将选中区域折叠
+          //word.collapse(document.body, 0);
           //focus, input的setSelectionRange
           /*
           while (window.find(selWord)) {
@@ -274,6 +289,7 @@
     }
 
     function fireKeyEvent() {
+      //调用浏览器的ctrl+f
       //事件中keycode总是零
       //evt.initKeyBoardEvent("keydown", false, false, window, "U+0070", 0, true, false, false, false, false);
       //evt.initEvent("keydown", true, true); 这个方法已经废弃

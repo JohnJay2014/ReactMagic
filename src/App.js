@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import boy from './boy.jpg';
 import girl from './girl.jpg';
 import data from './general.json'
+import One from './One';
 
 
 //创建一个React.Component的ES6类，该类封装了要展示的元素
@@ -142,27 +143,7 @@ function App() {
     }
     if (item.lw.length == 1) {
       return (
-        <section id={"con" + i}>
-          <article class="comment-item">
-            <a class="pull-left thumb-sm">
-              <img src={item.fimg} class="img-circle" />
-            </a>
-            <section class="comment-body m-b">
-              <header>
-                <a href="#"><strong>{item.first}</strong></a>
-                <label class="label bg-dark m-l-xs">{item.tag}</label>
-                <span class="text-muted text-xs block m-t-xs">
-                  发起者
-              </span>
-              </header>
-              <blockquote class="m-t">
-                <p>{item.lw[0]}</p>
-                <small>{item.reason}</small>
-              </blockquote>
-              <div class="m-t-sm">{item.goal}</div>
-            </section>
-          </article>
-        </section>
+        <One item={item} i={i}/>
       );
     }
 
