@@ -3,7 +3,9 @@ import boy from './boy.jpg';
 import girl from './girl.jpg';
 import data from './general.json'
 import One from './One';
-
+import Two from './Two';
+import Three from './Three';
+import Four from './Four';
 
 //创建一个React.Component的ES6类，该类封装了要展示的元素
 //使用ES6 class来定义一个组件
@@ -27,120 +29,7 @@ function App() {
       item.simg = boy;
       item.timg = girl;
     }
-    //根据对话长度智能返回节点
-    if (item.lw.length == 3) {
-      return (
-        <section id={"con" + i}>
-          <article class="comment-item">
-            <a class="pull-left thumb-sm">
-              <img src={item.fimg} class="img-circle" />
-            </a>
-            <section class="comment-body m-b">
-              <header>
-                <a href="#"><strong>{item.first}</strong></a>
-                <label class="label bg-info m-l-xs">{item.tag}</label>
-                <span class="text-muted text-xs block m-t-xs">
-                  发起者
-                </span>
-              </header>
-              <div class="m-t-sm">{item.lw[0]}</div>
-            </section>
-          </article>
-          <article class="comment-item comment-reply">
-            <a class="pull-left thumb-sm">
-              <img src={item.simg} class="img-circle" />
-            </a>
-            <section class="comment-body m-b">
-              <header>
-                <a href="#"><strong>{item.second}</strong></a>
-                <label class="label bg-dark m-l-xs"></label>
-                <span class="text-muted text-xs block m-t-xs">
-                </span>
-              </header>
-              <div class="m-t-sm">{item.lw[1]}</div>
-            </section>
-          </article>
-          <article class="comment-item comment-reply">
-            <a class="pull-left thumb-sm">
-              <img src={item.timg} class="img-circle" />
-            </a>
-            <section class="comment-body m-b">
-              <header>
-                <a href="#"><strong>{item.third}</strong></a>
-                <label class="label bg-dark m-l-xs"></label>
-                <span class="text-muted text-xs block m-t-xs">
-                </span>
-              </header>
-              <div class="m-t-sm">{item.lw[2]}</div>
-            </section>
-          </article>
-        </section>
-      );
-    }
-
-    if (item.lw.length == 4) {
-      return (
-        <section id={"con" + i}>
-          <article class="comment-item">
-            <a class="pull-left thumb-sm">
-              <img src={item.fimg} class="img-circle" />
-            </a>
-            <section class="comment-body m-b">
-              <header>
-                <a href="#"><strong>{item.first}</strong></a>
-                <label class="label bg-info m-l-xs">{item.tag}</label>
-                <span class="text-muted text-xs block m-t-xs">
-                  发起者
-                </span>
-              </header>
-              <div class="m-t-sm">{item.lw[0]}</div>
-            </section>
-          </article>
-          <article class="comment-item comment-reply">
-            <a class="pull-left thumb-sm">
-              <img src={item.simg} class="img-circle" />
-            </a>
-            <section class="comment-body m-b">
-              <header>
-                <a href="#"><strong>{item.second}</strong></a>
-                <label class="label bg-dark m-l-xs"></label>
-                <span class="text-muted text-xs block m-t-xs">
-                </span>
-              </header>
-              <div class="m-t-sm">{item.lw[1]}</div>
-            </section>
-          </article>
-          <article class="comment-item comment-reply">
-            <a class="pull-left thumb-sm">
-              <img src={item.timg} class="img-circle" />
-            </a>
-            <section class="comment-body m-b">
-              <header>
-                <a href="#"><strong>{item.third}</strong></a>
-                <label class="label bg-dark m-l-xs"></label>
-                <span class="text-muted text-xs block m-t-xs">
-                </span>
-              </header>
-              <div class="m-t-sm">{item.lw[2]}</div>
-            </section>
-          </article>
-          <article class="comment-item comment-reply">
-            <a class="pull-left thumb-sm">
-              <img src={item.simg} class="img-circle" />
-            </a>
-            <section class="comment-body m-b">
-              <header>
-                <a href="#"><strong>{item.second}</strong></a>
-                <label class="label bg-dark m-l-xs"></label>
-                <span class="text-muted text-xs block m-t-xs">
-                </span>
-              </header>
-              <div class="m-t-sm">{item.lw[3]}</div>
-            </section>
-          </article>
-        </section>
-      );
-    }
+    //根据对话长度返回不同DOM节点
     if (item.lw.length == 1) {
       return (
         <One item={item} i={i}/>
@@ -149,39 +38,22 @@ function App() {
 
     if (item.lw.length == 2) {
       return (
-        <section id={"con" + i}>
-          <article class="comment-item">
-            <a class="pull-left thumb-sm">
-              <img src={item.fimg} class="img-circle" />
-            </a>
-            <section class="comment-body m-b">
-              <header>
-                <a href="#"><strong>{item.first}</strong></a>
-                <label class="label bg-info m-l-xs">{item.tag}</label>
-                <span class="text-muted text-xs block m-t-xs">
-                  发起者
-                      </span>
-              </header>
-              <div class="m-t-sm">{item.lw[0]}</div>
-            </section>
-          </article>
-          <article class="comment-item comment-reply">
-            <a class="pull-left thumb-sm">
-              <img src={item.simg} class="img-circle" />
-            </a>
-            <section class="comment-body m-b">
-              <header>
-                <a href="#"><strong>{item.second}</strong></a>
-                <label class="label bg-dark m-l-xs"></label>
-                <span class="text-muted text-xs block m-t-xs">
-                </span>
-              </header>
-              <div class="m-t-sm">{item.lw[1]}</div>
-            </section>
-          </article>
-        </section>
+        <Two item={item} i={i}/>
       );
     }
+
+    if (item.lw.length == 3) {
+      return (
+       <Three item={item} i={i}/>
+      );
+    }
+
+    if (item.lw.length == 4) {
+      return (
+        <Four item={item} i={i}/>
+      );
+    }
+
   })
 
   return (

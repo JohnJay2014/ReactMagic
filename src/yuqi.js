@@ -2,6 +2,7 @@ import React from 'react';
 import boy from './boy.jpg';
 import girl from './girl.jpg';
 import data from './yuqi.json';
+import OneBlock from './OneBlock';
 
 
 function Yuqi() {
@@ -25,28 +26,7 @@ function Yuqi() {
         }
         if (item.lw.length == 1) {
             return (
-                <article id="comment-id-4" class="comment-item">
-                    <a class="pull-left thumb-sm avatar"><img src={item.fimg} alt="..." /></a>
-                    <span class="arrow left"></span>
-                    <section class="comment-body panel panel-default">
-                        <header class="panel-heading">
-                            <a href="#">Peter</a>
-                            <label class="label bg-primary m-l-xs">{item.tag}</label>
-                            <span class="text-muted m-l-sm pull-right">
-                                <i class="fa fa-clock-o"></i>
-                            </span>
-                        </header>
-                        <div class="panel-body">
-                            <blockquote>
-                                <p>{item.lw[0]}</p>
-                            </blockquote>
-                            <div></div>
-                            <div class="comment-action m-t-sm">
-
-                            </div>
-                        </div>
-                    </section>
-                </article>
+                <OneBlock item={item} i={i}/>
             );
         }
 
