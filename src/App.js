@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import boy from './boy.jpg';
-import girl from './girl.jpg';
-import data from './general.json'
-import One from './One';
-import Two from './Two';
-import Three from './Three';
-import Four from './Four';
+import boy from './resource/boy.jpg';
+import girl from './resource/girl.jpg';
+import data from './data/general.json'
+import One from './control/One';
+import Two from './control/Two';
+import Three from './control/Three';
+import Four from './control/Four';
 
 //创建一个React.Component的ES6类，该类封装了要展示的元素
 //使用ES6 class来定义一个组件
@@ -32,25 +32,25 @@ function App() {
     //根据对话长度返回不同DOM节点
     if (item.lw.length == 1) {
       return (
-        <One item={item} i={i}/>
+        <One item={item} i={i} />
       );
     }
 
     if (item.lw.length == 2) {
       return (
-        <Two item={item} i={i}/>
+        <Two item={item} i={i} />
       );
     }
 
     if (item.lw.length == 3) {
       return (
-       <Three item={item} i={i}/>
+        <Three item={item} i={i} />
       );
     }
 
     if (item.lw.length == 4) {
       return (
-        <Four item={item} i={i}/>
+        <Four item={item} i={i} />
       );
     }
 

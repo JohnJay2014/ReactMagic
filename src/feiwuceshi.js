@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import boy from './boy.jpg';
-import girl from './girl.jpg';
-import feiwuceshi from './feiwuceshi.json'
+import boy from './resource/boy.jpg';
+import girl from './resource/girl.jpg';
+import feiwuceshi from './data/feiwuceshi.json'
 
 //创建一个React.Component的ES6类，该类封装了要展示的元素
 //使用ES6 class来定义一个组件

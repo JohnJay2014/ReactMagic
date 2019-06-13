@@ -9,7 +9,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 每一种类型的对话使用一种颜色
 更新错误示范的tab 使用新的组件
 
+这些收录一个是要实用
+一个是要符合自己的风格
+
 目前生成三种组件 左边目录
+右边的组件完成了嵌套
 
 In the project directory, you can run:
 

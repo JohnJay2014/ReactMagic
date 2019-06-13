@@ -1,8 +1,8 @@
 import React from 'react';
-import boy from './boy.jpg';
-import girl from './girl.jpg';
-import data from './yuqi.json';
-import OneBlock from './OneBlock';
+import boy from './resource/boy.jpg';
+import girl from './resource/girl.jpg';
+import data from './data/yuqi.json';
+import OneBlock from './control/OneBlock';
 
 
 function Yuqi() {
@@ -26,7 +26,7 @@ function Yuqi() {
         }
         if (item.lw.length == 1) {
             return (
-                <OneBlock item={item} i={i}/>
+                <OneBlock item={item} i={i} />
             );
         }
 

@@ -1,7 +1,7 @@
 import React from 'react';
-import boy from './boy.jpg';
-import girl from './girl.jpg';
-import data from './dhv.json'
+import boy from './resource/boy.jpg';
+import girl from './resource/girl.jpg';
+import data from './data/dhv.json'
 
 function DHV(props) {
     var i = 0;
