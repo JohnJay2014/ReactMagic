@@ -18,6 +18,15 @@
     <script src="js/ie/respond.min.js"></script>
     <script src="js/ie/excanvas.js"></script>
   <![endif]-->
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?497de746a86813b192ba33df05157f58";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
 </head>
 
 <body class="">
@@ -183,15 +192,18 @@
             <section>
               <section class="vbox">
                 <section class="scrollable padder-lg w-f-md" id="bjax-target">
-                  <a href="#" class="pull-right text-muted m-t-lg" data-toggle="class:fa-spin"><i class="icon-refresh i-lg  inline"
+                    <a href="#" class="pull-right text-muted m-t-lg" data-toggle="class:fa-spin"><i class="icon-refresh i-lg  inline"
                       id="refresh"></i></a>
-                  <h2 class="font-thin m-b">博弈 <span class="musicbar animate inline m-l-sm" style="width:20px;height:20px">
-                      <span class="bar1 a1 bg-primary lter"></span>
-                      <span class="bar2 a2 bg-info lt"></span>
-                      <span class="bar3 a3 bg-success"></span>
-                      <span class="bar4 a4 bg-warning dk"></span>
-                      <span class="bar5 a5 bg-danger dker"></span>
-                    </span></h2>
+                    <h2 class="font-thin m-b">博弈
+                      <span id="count"></span>
+                      <span class="musicbar animate inline m-l-sm" style="width:20px;height:20px">
+                        <span class="bar1 a1 bg-primary lter"></span>
+                        <span class="bar2 a2 bg-info lt"></span>
+                        <span class="bar3 a3 bg-success"></span>
+                        <span class="bar4 a4 bg-warning dk"></span>
+                        <span class="bar5 a5 bg-danger dker"></span>
+                      </span> 
+                    </h2>
                   <div id="root"></div>
                 </section>
                 <footer class="footer bg-dark">
@@ -205,7 +217,9 @@
                           placeholder="Search dalogue">
                       </div>
                     </div>
+
                   </form>
+
                 </footer>
               </section>
             </section>
@@ -214,6 +228,7 @@
 
             <!-- / side content -->
           </section>
+
           <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen,open" data-target="#nav,html"></a>
         </section>
       </section>
@@ -315,6 +330,7 @@
     }
 
   </script>
+
 
 </body>
 

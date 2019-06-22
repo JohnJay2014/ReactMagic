@@ -15,6 +15,14 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 目前生成三种组件 左边目录
 右边的组件完成了嵌套
 
+功能 统计每页对话条目
+每种对话分阶段
+
+
+功能 统计每页对话条目
+每种对话分阶段
+
+
 In the project directory, you can run:
 
 ### `npm start`
