@@ -7,7 +7,7 @@ import feiwuceshi from './data/feiwuceshi.json'
 //使用ES6 class来定义一个组件
 //也可以使用函数定义一个组件+------------------------------------------
 function Widgets(props) {
-    var i = 0;
+    let i = 0;
     var domList = feiwuceshi.map(function (item) {
         i++;
         if (item.initiator == 'boy') {
