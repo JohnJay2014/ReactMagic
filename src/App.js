@@ -15,8 +15,8 @@ class App extends React.Component {
 
   }
   render() {
+    let i = 0
     let domList = this.props.data.map(function (item) {
-      let i = 0
       i++;
       if (item.initiator == 'boy') {
         item.first = "Sage";

@@ -1,24 +1,39 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import data from './data/general.json';
 import DHV from './dhv';
 import Yuqi from './yuqi';
 import Feiwuceshi from './feiwuceshi';
+import data from './data/general.json';
+import feiwuceshi from './data/feiwuceshi.json'
 import Count from './Count';
+import { createStore } from 'redux';
+
+const reducer = (state = data, action) => {
+    switch (action.type) {
+        case "feiwu":
+            return feiwuceshi;
+        default:
+            return data;
+    }
+}
+const feiwu = { type: "feiwu" }
+const store = createStore(reducer);
+console.log(store.getState());
 
 class List extends React.Component {
     componentWillMount() {
-        ReactDOM.render(<App data={data} />, document.getElementById('root'));
+        ReactDOM.render(<App data={store.getState()} />, document.getElementById('root'));
     }
     addIndex() {
         ReactDOM.unmountComponentAtNode(document.getElementById('root'));
-        ReactDOM.render(<App data={data} />, document.getElementById('root'));
+        ReactDOM.render(<App data={store.getState()} />, document.getElementById('root'));
         document.getElementById("nav").classList.remove("nav-off-screen");
     }
     addFeiwuTest() {
+        store.dispatch(feiwu);
         ReactDOM.unmountComponentAtNode(document.getElementById('root'));
-        ReactDOM.render(<Feiwuceshi />, document.getElementById('root'));
+        ReactDOM.render(<Feiwuceshi feiwuceshi={store.getState()} />, document.getElementById('root'));
         document.getElementById("nav").classList.remove("nav-off-screen");
     }
     addYuqi() {
@@ -42,7 +57,6 @@ class List extends React.Component {
                         <a onClick={this.addIndex}>
                             <i class="icon-disc icon text-success"></i>
                             <span class="font-bold">首页</span>
-                            <Count count={data.length} />
                         </a>
                     </li>
                     <li>
