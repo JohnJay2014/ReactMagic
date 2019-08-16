@@ -1,27 +1,33 @@
+熟悉ES6语法（面试）
+再根据各类教程敲代码的时候熟悉各个语法...
+
+熟悉react及react全家桶（面试）
+react-router redux axios
+
+更新JSON（个人成长）
+这些收录对话
+一个是要实用
+一个是要符合自己的风格
+
+著作权了解（个人应用销售）
+前端代码部署（个人应用销售）
+
+功能 
+统计每页对话条目
+对话分阶段 陌生人 友谊区 亲密 
+每一种类型的对话使用一种颜色
+
+遵循react开发最佳实践
+
+已完成
+
+左边目录组件
+组件嵌套
+Redux引入
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
-
-更新JSON是比较重要的一件事
-著作权了解
-
-其次是熟悉react
-每一种类型的对话使用一种颜色
-更新错误示范的tab 使用新的组件
-
-这些收录一个是要实用
-一个是要符合自己的风格
-
-目前生成三种组件 左边目录
-右边的组件完成了嵌套
-
-功能 统计每页对话条目
-每种对话分阶段
-
-
-功能 统计每页对话条目
-每种对话分阶段
-
 
 In the project directory, you can run:
 

@@ -4,21 +4,9 @@ import App from './App';
 import DHV from './dhv';
 import Yuqi from './yuqi';
 import Feiwuceshi from './feiwuceshi';
-import data from './data/general.json';
-import feiwuceshi from './data/feiwuceshi.json'
-import Count from './Count';
-import { createStore } from 'redux';
+import store from './Store';
+import { Provider, connect } from "react-redux"
 
-const reducer = (state = data, action) => {
-    switch (action.type) {
-        case "feiwu":
-            return feiwuceshi;
-        default:
-            return data;
-    }
-}
-const feiwu = { type: "feiwu" }
-const store = createStore(reducer);
 console.log(store.getState());
 
 class List extends React.Component {
@@ -26,22 +14,25 @@ class List extends React.Component {
         ReactDOM.render(<App data={store.getState()} />, document.getElementById('root'));
     }
     addIndex() {
+        store.dispatch({ type: "" });
         ReactDOM.unmountComponentAtNode(document.getElementById('root'));
         ReactDOM.render(<App data={store.getState()} />, document.getElementById('root'));
         document.getElementById("nav").classList.remove("nav-off-screen");
     }
     addFeiwuTest() {
-        store.dispatch(feiwu);
+        store.dispatch({ type: "feiwu" });
         ReactDOM.unmountComponentAtNode(document.getElementById('root'));
         ReactDOM.render(<Feiwuceshi feiwuceshi={store.getState()} />, document.getElementById('root'));
         document.getElementById("nav").classList.remove("nav-off-screen");
     }
     addYuqi() {
+        store.dispatch({ type: "yuqi" });
         ReactDOM.unmountComponentAtNode(document.getElementById('root'));
         ReactDOM.render(<Yuqi />, document.getElementById('root'));
         document.getElementById("nav").classList.remove("nav-off-screen");
     }
     addDHV() {
+        store.dispatch({ type: "dhv" });
         ReactDOM.unmountComponentAtNode(document.getElementById('root'));
         ReactDOM.render(<DHV />, document.getElementById('root'));
         document.getElementById("nav").classList.remove("nav-off-screen");
