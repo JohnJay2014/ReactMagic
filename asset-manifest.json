@@ -1,14 +1,14 @@
 {
   "main.css": "/ReactMagic/static/css/main.b5ed48d7.chunk.css",
-  "main.js": "/ReactMagic/static/js/main.cff154f9.chunk.js",
-  "main.js.map": "/ReactMagic/static/js/main.cff154f9.chunk.js.map",
-  "static/js/1.7d4ca16d.chunk.js": "/ReactMagic/static/js/1.7d4ca16d.chunk.js",
-  "static/js/1.7d4ca16d.chunk.js.map": "/ReactMagic/static/js/1.7d4ca16d.chunk.js.map",
+  "main.js": "/ReactMagic/static/js/main.4b14da17.chunk.js",
+  "main.js.map": "/ReactMagic/static/js/main.4b14da17.chunk.js.map",
+  "static/js/1.5969d033.chunk.js": "/ReactMagic/static/js/1.5969d033.chunk.js",
+  "static/js/1.5969d033.chunk.js.map": "/ReactMagic/static/js/1.5969d033.chunk.js.map",
   "runtime~main.js": "/ReactMagic/static/js/runtime~main.579ecb40.js",
   "runtime~main.js.map": "/ReactMagic/static/js/runtime~main.579ecb40.js.map",
   "static/media/girl.jpg": "/ReactMagic/static/media/girl.6f3ef122.jpg",
   "static/css/main.b5ed48d7.chunk.css.map": "/ReactMagic/static/css/main.b5ed48d7.chunk.css.map",
   "index.html": "/ReactMagic/index.html",
-  "precache-manifest.605ec2cc9088b04d38848c8668c1a0fc.js": "/ReactMagic/precache-manifest.605ec2cc9088b04d38848c8668c1a0fc.js",
+  "precache-manifest.cf885144861f3c71feb857d4194858be.js": "/ReactMagic/precache-manifest.cf885144861f3c71feb857d4194858be.js",
   "service-worker.js": "/ReactMagic/service-worker.js"
 }
