@@ -5,13 +5,15 @@ import DHV from './dhv';
 import Yuqi from './yuqi';
 import Feiwuceshi from './feiwuceshi';
 import store from './Store';
-import { Provider, connect } from "react-redux"
+//import { Provider, connect } from "react-redux"
 
-console.log(store.getState());
+//console.log(store.getState());
 
 class List extends React.Component {
     componentWillMount() {
         ReactDOM.render(<App data={store.getState()} />, document.getElementById('root'));
+        document.getElementById('bottom').style.display = "none";
+
     }
     addIndex() {
         store.dispatch({ type: "" });
@@ -28,13 +30,25 @@ class List extends React.Component {
     addYuqi() {
         store.dispatch({ type: "yuqi" });
         ReactDOM.unmountComponentAtNode(document.getElementById('root'));
-        ReactDOM.render(<Yuqi />, document.getElementById('root'));
+        ReactDOM.render(<Yuqi data={store.getState()} />, document.getElementById('root'));
         document.getElementById("nav").classList.remove("nav-off-screen");
     }
     addDHV() {
         store.dispatch({ type: "dhv" });
         ReactDOM.unmountComponentAtNode(document.getElementById('root'));
-        ReactDOM.render(<DHV />, document.getElementById('root'));
+        ReactDOM.render(<DHV data={store.getState()} />, document.getElementById('root'));
+        document.getElementById("nav").classList.remove("nav-off-screen");
+    }
+    addBar() {
+        ReactDOM.unmountComponentAtNode(document.getElementById('root'));
+        //ReactDOM.unmountComponentAtNode(document.getElementById('bottom'));
+
+        ReactDOM.render(
+            <div>
+                <img src="images/longzhifubao.jpg" alt="" class="img-full"></img>
+                <img src="images/longweixin.jpg" alt="" class="img-full"></img>
+            </div>
+            , document.getElementById('root'));
         document.getElementById("nav").classList.remove("nav-off-screen");
     }
     render() {
@@ -47,7 +61,7 @@ class List extends React.Component {
                     <li>
                         <a onClick={this.addIndex}>
                             <i class="icon-disc icon text-success"></i>
-                            <span class="font-bold">首页</span>
+                            <span class="font-bold">博弈</span>
                         </a>
                     </li>
                     <li>
@@ -69,6 +83,13 @@ class List extends React.Component {
                             <i class="icon-diamond icon text-primary-lter"></i>
                             <b class="badge bg-primary pull-right"></b>
                             <span class="font-bold">高价值</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a onClick={this.addBar}>
+                            <i class="fa fa-rmb icon text-primary-lter"></i>
+                            <b class="badge bg-primary pull-right"></b>
+                            <span class="font-bold">支付方式</span>
                         </a>
                     </li>
                     <li class="m-b hidden-nav-xs"></li>

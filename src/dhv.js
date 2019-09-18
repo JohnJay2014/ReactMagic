@@ -1,11 +1,10 @@
 import React from 'react';
 import boy from './resource/boy.jpg';
 import girl from './resource/girl.jpg';
-import data from './data/dhv.json'
 
 function DHV(props) {
-    var i = 0;
-    var domList = data.map(function (item) {
+    let i = 0;
+    let domList = props.data.map(item => {
         i++;
         if (item.initiator == 'boy') {
             item.first = "Sage";

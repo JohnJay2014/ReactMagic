@@ -5,13 +5,17 @@ import One from './control/One';
 import Two from './control/Two';
 import Three from './control/Three';
 import Four from './control/Four';
-
+//import { Pagination } from 'antd';
 
 //创建一个React.Component的ES6类，该类封装了要展示的元素
 //使用ES6 class来定义一个组件
 //也可以使用函数定义一个组件
 class App extends React.Component {
   componentWillMount() {
+
+  }
+
+  onChange() {
 
   }
   render() {
@@ -60,6 +64,15 @@ class App extends React.Component {
 
     })
 
+
+    const a = 5;
+    let fp = domList.slice(0, 5);
+    let pagiantion = [];
+    pagiantion.push(<li class="active"><a href="#">1</a></li>);
+    for (let b = 1; b < i / 5; b++) {
+      pagiantion.push(<li onClick={this.onChange}><a href="#">{b + 1}</a></li>);
+    }
+
     return (
       //JSX就是Javascript和XML结合的一种格式
       /*
@@ -82,7 +95,15 @@ class App extends React.Component {
         */
       //this.props
       <section class="comment-list block">
-        {domList}
+        {fp}
+        <div class="text-center">
+          <span>{this.props.data.length}</span>
+          <ul class="pagination pagination-lg">
+            <li><a href="#"><i class="fa fa-chevron-left"></i></a></li>
+            {pagiantion}
+            <li><a href="#"><i class="fa fa-chevron-right"></i></a></li>
+          </ul>
+        </div>
       </section>
     );
   }
