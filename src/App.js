@@ -16,8 +16,14 @@ import Four from './control/Four';
 class App extends React.Component {
   constructor(props) {
     super(props);
+
+    //为事件处理函数绑定实例
+    this.onChange = this.onChange.bind(this);
+    this.onLeft = this.onLeft.bind(this);
+    this.onRight = this.onRight.bind(this);
+
     let i = 0
-    let domList = this.props.data.map(function (item) {
+    let domList = props.data.map(item => {
       i++;
       if (item.initiator == 'boy') {
         item.first = "Sage";
@@ -35,62 +41,61 @@ class App extends React.Component {
         item.timg = girl;
       }
       //根据对话长度返回不同DOM节点
-      if (item.lw.length == 1) {
-        return (
-          <One item={item} i={i} />
-        );
-      }
-
-      if (item.lw.length == 2) {
-        return (
-          <Two item={item} i={i} />
-        );
-      }
-
-      if (item.lw.length == 3) {
-        return (
-          <Three item={item} i={i} />
-        );
-      }
-
-      if (item.lw.length == 4) {
-        return (
-          <Four item={item} i={i} />
-        );
+      switch (item.lw.length) {
+        case 1:
+          return (
+            <One item={item} i={i} />
+          );
+        case 2:
+          return (
+            <Two item={item} i={i} />
+          );
+        case 3:
+          return (
+            <Three item={item} i={i} />
+          );
+        case 4:
+          return (
+            <Four item={item} i={i} />
+          );
+        default:
+          return (
+            <span>长度不支持</span>
+          );
       }
     })
-    this.onChange = this.onChange.bind(this);
-    this.onLeft = this.onLeft.bind(this);
-    this.onRight = this.onRight.bind(this);
 
     let pagination = [];
-    let active = "active";
     let j = 1;
-    pagination.push(<li id={j} onClick={this.onChange} className={active}><a href="#">1</a></li>);
+    //给每个li加id存在疑问
+    pagination.push(<li id={j} onClick={this.onChange} className="active"><span>1</span></li>);
     for (let b = 1; b < i / 5; b++) {
-      pagination.push(<li id={b + 1} onClick={this.onChange}><a href="#">{b + 1}</a></li>);
+      pagination.push(<li id={b + 1} onClick={this.onChange}><span>{b + 1}</span></li>);
     }
+
+    //初始化内部state
     this.state = {
+      baba: domList,
       cp: domList.slice(0, 5),
       pagination: pagination,
-      baba: domList,
-      selected: j,
-      max: Math.ceil(i / 5)
+      max: Math.ceil(i / 5),
+      selected: j
     };
-
   }
+
   componentWillMount() {
 
   }
+
   onChange(e) {
-    //ReactDOM.unmountComponentAtNode(document.getElementById('root'));
-    let j = e.currentTarget.innerText;
     e.currentTarget.className = "active";
-    document.getElementById(this.state.selected).className = "";
+    let j = e.currentTarget.innerText;
     this.setState({ selected: parseInt(j) });
     this.setState({ cp: this.state.baba.slice((j - 1) * 5, j * 5) });
+    document.getElementById(this.state.selected).className = "";
     document.getElementById("bjax-target").scrollTo(0, 0);
   }
+
   onLeft(e) {
     let j = this.state.selected - 1;
     if (j != 0) {
@@ -101,50 +106,34 @@ class App extends React.Component {
       document.getElementById("bjax-target").scrollTo(0, 0);
     }
   }
+
   onRight(e) {
     let k = this.state.selected + 1;
     if (k <= this.state.max) {
-
       document.getElementById(this.state.selected).className = "";
+      /*
+        setState不总是立即更新组件，会批量推迟更新，所以避免在调用之后立即读取this.state
+      */
       document.getElementById(this.state.selected + 1).className = "active";
       this.setState({ selected: k });
       this.setState({ cp: this.state.baba.slice((k - 1) * 5, k * 5) });
       document.getElementById("bjax-target").scrollTo(0, 0);
     }
   }
+
   render() {
     return (
       //JSX就是Javascript和XML结合的一种格式
-      /*
-        <div className="App">
-          <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <p>
-              Edit <code>src/App.js</code> and save to reload.
-            </p>
-            <a
-              className="App-link"
-              href="https://reactjs.org"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn React
-            </a>
-          </header>
-        </div>
-        */
-      //this.props
       <section class="comment-list block">
         <div id="right-content">{this.state.cp}
         </div>
         <div class="text-center">
           <ul class="pagination pagination-lg">
-            <li><a onClick={this.onLeft}><i class="fa fa-chevron-left"></i></a></li>
+            <li><span onClick={this.onLeft}><i class="fa fa-chevron-left"></i></span></li>
             {this.state.pagination}
-            <li><a onClick={this.onRight}><i class="fa fa-chevron-right"></i></a></li>
+            <li><span onClick={this.onRight}><i class="fa fa-chevron-right"></i></span></li>
           </ul>
-          <span class="m-b-xs h3 block">{this.props.data.length}</span>
-
+          <span class="m-b-xs h3 block">{"总计" + this.props.data.length}</span>
         </div>
       </section>
     );
