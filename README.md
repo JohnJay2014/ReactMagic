@@ -8,14 +8,17 @@ react-router redux axios
 这些收录对话
 一个是要实用
 一个是要符合自己的风格
+按重要性分级：私密空间 进挪（言语进挪） 升级关系 高价值展现  
 
 著作权了解（个人应用销售）
 前端代码部署（个人应用销售）
 
-功能 
+功能
+每一种类型的对话使用一种颜色
+使用标签来做filter
 统计每页对话条目
 对话分阶段 陌生人 友谊区 亲密 
-每一种类型的对话使用一种颜色
+
 
 遵循react开发最佳实践
 
@@ -23,6 +26,7 @@ react-router redux axios
 左边目录组件
 组件嵌套
 Redux引入
+分页
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

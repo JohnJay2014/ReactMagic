@@ -124,18 +124,41 @@ class App extends React.Component {
   render() {
     return (
       //JSX就是Javascript和XML结合的一种格式
-      <section class="comment-list block">
-        <div id="right-content">{this.state.cp}
+      <div>
+        <div class="m-b-lg text-center">
+          <p>
+            <span class="label bg-light">label</span>
+            <span class="label bg-primary">夸奖</span>
+            <span class="label bg-success">邀约</span>
+            <span class="label bg-info">Info</span>
+            <span class="label bg-dark">dark</span>
+            <span class="label bg-warning">Warning</span>
+            <span class="label bg-danger">Danger</span>
+          </p>
+          <p class="m-b-none">
+            <span class="badge">15</span>
+            <span class="badge bg-primary">15</span>
+            <span class="badge bg-success">20</span>
+            <span class="badge bg-info">21</span>
+            <span class="badge bg-dark">13</span>
+            <span class="badge bg-warning">35</span>
+            <span class="badge bg-danger">32</span>
+          </p>
         </div>
-        <div class="text-center">
-          <ul class="pagination pagination-lg">
-            <li><span onClick={this.onLeft}><i class="fa fa-chevron-left"></i></span></li>
-            {this.state.pagination}
-            <li><span onClick={this.onRight}><i class="fa fa-chevron-right"></i></span></li>
-          </ul>
-          <span class="m-b-xs h3 block">{"总计" + this.props.data.length}</span>
-        </div>
-      </section>
+        <section class="comment-list block">
+          <div id="right-content">{this.state.cp}
+          </div>
+          <div class="text-center">
+            <ul class="pagination pagination-lg">
+              <li><span onClick={this.onLeft}><i class="fa fa-chevron-left"></i></span></li>
+              {this.state.pagination}
+              <li><span onClick={this.onRight}><i class="fa fa-chevron-right"></i></span></li>
+            </ul>
+            <span class="m-b-xs h3 block">{"总计" + this.props.data.length}</span>
+          </div>
+        </section>
+      </div>
+
     );
   }
 }
