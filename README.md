@@ -28,6 +28,24 @@ react-router redux axios
 Redux引入
 分页
 
+Json格式
+lw代表对话
+jx对话解释的数组
+reason解释单句为什么这么说
+goal在最外层解释这一套对话的目的
+
+控件分类
+
+纯对话带Tag - general
+
+单句成块
+男方单句 - 做预期/进挪
+
+单句成块带子句
+
+整块
+男女对话带解释 - 废测（适合一来一回的场合）
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

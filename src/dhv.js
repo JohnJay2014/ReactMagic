@@ -114,10 +114,10 @@ function DHV(props) {
             </header>
           </div>
           */
-        //this.props
-        <section class="comment-list block">
+        //this.prop
+        <div>
             {domList}
-        </section>
+        </div>
     );
 }
 

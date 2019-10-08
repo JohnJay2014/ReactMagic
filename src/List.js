@@ -27,6 +27,12 @@ class List extends React.Component {
         ReactDOM.render(<Feiwuceshi feiwuceshi={store.getState()} />, document.getElementById('root'));
         document.getElementById("nav").classList.remove("nav-off-screen");
     }
+    addJinnuo() {
+        store.dispatch({ type: "jinnuo" });
+        ReactDOM.unmountComponentAtNode(document.getElementById('root'));
+        ReactDOM.render(<Yuqi data={store.getState()} />, document.getElementById('root'));
+        document.getElementById("nav").classList.remove("nav-off-screen");
+    }
     addYuqi() {
         store.dispatch({ type: "yuqi" });
         ReactDOM.unmountComponentAtNode(document.getElementById('root'));
@@ -72,17 +78,24 @@ class List extends React.Component {
                         </a>
                     </li>
                     <li>
-                        <a onClick={this.addYuqi}>
-                            <i class="icon-fire icon text-primary-lter"></i>
-                            <b class="badge bg-primary pull-right"></b>
-                            <span class="font-bold">预期</span>
-                        </a>
-                    </li>
-                    <li>
                         <a onClick={this.addDHV}>
                             <i class="icon-diamond icon text-primary-lter"></i>
                             <b class="badge bg-primary pull-right"></b>
                             <span class="font-bold">高价值</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a onClick={this.addJinnuo}>
+                            <i class="icon-fire icon text-primary-lter"></i>
+                            <b class="badge bg-primary pull-right"></b>
+                            <span class="font-bold">进挪</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a onClick={this.addYuqi}>
+                            <i class="icon-fire icon text-primary-lter"></i>
+                            <b class="badge bg-primary pull-right"></b>
+                            <span class="font-bold">预期</span>
                         </a>
                     </li>
                     <li>
