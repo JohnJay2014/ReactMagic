@@ -67,7 +67,8 @@ class App extends React.Component {
 
     let pagination = [];
     let j = 1;
-    //给每个li加id存在疑问
+    //给每个li加id存在疑问, 加id是为了获取这个li修改选中状态，可以通过ref父节点的形式操作
+    //不应该给每个li都绑定click事件，冒泡到父亲更合理
     pagination.push(<li id={j} onClick={this.onChange} className="active"><span>1</span></li>);
     for (let b = 1; b < i / 5; b++) {
       pagination.push(<li id={b + 1} onClick={this.onChange}><span>{b + 1}</span></li>);
@@ -154,7 +155,7 @@ class App extends React.Component {
               {this.state.pagination}
               <li><span onClick={this.onRight}><i class="fa fa-chevron-right"></i></span></li>
             </ul>
-            <span class="m-b-xs h3 block">{"总计" + this.props.data.length}</span>
+            <span class="m-b-xs h4 block">{"总计" + this.props.data.length}</span>
           </div>
         </section>
       </div>

@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import DHV from './dhv';
 import Yuqi from './yuqi';
+import Jinnuo from './jinnuo';
 import Feiwuceshi from './feiwuceshi';
 import store from './Store';
 //import { Provider, connect } from "react-redux"
@@ -30,7 +31,7 @@ class List extends React.Component {
     addJinnuo() {
         store.dispatch({ type: "jinnuo" });
         ReactDOM.unmountComponentAtNode(document.getElementById('root'));
-        ReactDOM.render(<Yuqi data={store.getState()} />, document.getElementById('root'));
+        ReactDOM.render(<Jinnuo data={store.getState()} />, document.getElementById('root'));
         document.getElementById("nav").classList.remove("nav-off-screen");
     }
     addYuqi() {

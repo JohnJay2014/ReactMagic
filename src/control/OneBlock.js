@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class OneBlock extends React.Component {
     render() {
         const item = this.props.item;
-        const i = i;
+        const i = this.props.i;
         return (
             <section id={"con" + i}>
                 <article id="comment" class="comment-item">
@@ -12,16 +12,16 @@ class OneBlock extends React.Component {
                     <section class="comment-body panel panel-default">
                         <header class="panel-heading">
                             <a href="#">Peter</a>
-                            <label class="label bg-primary m-l-xs">{item.tag}</label>
+                            <label class="label bg-success m-l-xs">{item.tag}</label>
                             <span class="text-muted m-l-sm pull-right">
-                                <i class="fa fa-clock-o"></i>
+                                <i class="fa"></i>
                             </span>
                         </header>
                         <div class="panel-body">
                             <blockquote>
                                 <p>{item.lw[0]}</p>
                             </blockquote>
-                            <div></div>
+                            <div>{item.goal}</div>
                             <div class="comment-action m-t-sm">
 
                             </div>
