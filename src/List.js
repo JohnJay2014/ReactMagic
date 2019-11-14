@@ -6,6 +6,8 @@ import Yuqi from './yuqi';
 import Jinnuo from './jinnuo';
 import Feiwuceshi from './feiwuceshi';
 import store from './Store';
+import zhifubao from "./resource/longzhifubao.jpg";
+import weixin from "./resource/longweixin.jpg";
 //import { Provider, connect } from "react-redux"
 
 //console.log(store.getState());
@@ -50,10 +52,11 @@ class List extends React.Component {
         ReactDOM.unmountComponentAtNode(document.getElementById('root'));
         //ReactDOM.unmountComponentAtNode(document.getElementById('bottom'));
 
+        //在这里要提升图片加载速度 有什么办法
         ReactDOM.render(
             <div>
-                <img src="images/longzhifubao.jpg" alt="" class="img-full"></img>
-                <img src="images/longweixin.jpg" alt="" class="img-full"></img>
+                <img src={zhifubao} alt="" class="img-full"></img>
+                <img src={weixin} alt="" class="img-full"></img>
             </div>
             , document.getElementById('root'));
         document.getElementById("nav").classList.remove("nav-off-screen");
