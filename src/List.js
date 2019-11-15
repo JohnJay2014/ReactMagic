@@ -6,6 +6,7 @@ import Yuqi from './yuqi';
 import Jinnuo from './jinnuo';
 import Feiwuceshi from './feiwuceshi';
 import store from './Store';
+//这边只是一个引用，用的时候动态去拿
 import zhifubao from "./resource/longzhifubao.jpg";
 import weixin from "./resource/longweixin.jpg";
 //import { Provider, connect } from "react-redux"
@@ -17,6 +18,9 @@ class List extends React.Component {
         ReactDOM.render(<App data={store.getState()} />, document.getElementById('root'));
         document.getElementById('bottom').style.display = "none";
 
+        //提前加载图片到浏览器中，浏览器本地缓存
+        let preloadZhi = new Image().src = zhifubao;
+        let preloadWei = new Image().src = weixin;
     }
     addIndex() {
         store.dispatch({ type: "" });
@@ -52,7 +56,8 @@ class List extends React.Component {
         ReactDOM.unmountComponentAtNode(document.getElementById('root'));
         //ReactDOM.unmountComponentAtNode(document.getElementById('bottom'));
 
-        //在这里要提升图片加载速度 有什么办法
+        //在这里要提升图片加载速度
+        //另一种方法是先占位  通过img onLoad加载完成来显示
         ReactDOM.render(
             <div>
                 <img src={zhifubao} alt="" class="img-full"></img>
