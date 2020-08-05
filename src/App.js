@@ -12,18 +12,36 @@ import Four from './control/Four';
 //使用ES6 class来定义一个组件
 //也可以使用函数定义一个组件
 
-//props无法修改
+/* 看es6 class的文档 有助于理解 */
 class App extends React.Component {
   constructor(props) {
+    //props无法修改
     super(props);
 
     //为事件处理函数绑定实例
     this.onChange = this.onChange.bind(this);
     this.onLeft = this.onLeft.bind(this);
     this.onRight = this.onRight.bind(this);
+    this.onFilter = this.onFilter.bind(this);
 
+
+    this.state = {
+      baba: null,
+      cp: null,
+      pagination: null,
+      max: null,
+      selected: null
+    };
+    this.reCalPage(props.data);
+  }
+
+  componentWillMount() {
+
+  }
+
+  reCalPage(oData){
     let i = 0
-    let domList = props.data.map(item => {
+    let domList = oData.map(item => {
       i++;
       if (item.initiator == 'boy') {
         item.first = "Sage";
@@ -84,10 +102,6 @@ class App extends React.Component {
     };
   }
 
-  componentWillMount() {
-
-  }
-
   onChange(e) {
     e.currentTarget.className = "active";
     let j = e.currentTarget.innerText;
@@ -122,23 +136,98 @@ class App extends React.Component {
     }
   }
 
+  onFilter(e){
+    //重置内部状态baba 重新计算有多少页 跳到第一页
+    let i = 0
+    let domList = [];
+    this.props.data.map(item => {
+      if(item.tag.indexOf(e.currentTarget.innerText) == -1) {
+        return null;
+      }
+      i++;
+      if (item.initiator == 'boy') {
+        item.first = "Sage";
+        item.second = "Caren";
+        item.third = "Sage";
+        item.fimg = boy;
+        item.simg = girl;
+        item.timg = boy;
+      } else {
+        item.first = "Caren";
+        item.second = "Sage";
+        item.third = "Caren";
+        item.fimg = girl;
+        item.simg = boy;
+        item.timg = girl;
+      }
+      //根据对话长度返回不同DOM节点
+      switch (item.lw.length) {
+        case 1:
+          domList.push(
+            <One item={item} i={i} />
+          );
+          break;
+        case 2:
+          domList.push(
+            <Two item={item} i={i} />
+          );
+          break;
+
+        case 3:
+          domList.push(
+            <Three item={item} i={i} />
+          );
+          break;
+
+        case 4:
+          domList.push(
+            <Four item={item} i={i} />
+          );
+          break;
+
+        default:
+          domList.push(
+            <span>长度不支持</span>
+          );
+      }
+
+    })
+
+    let pagination = [];
+    let j = 1;
+    //给每个li加id存在疑问, 加id是为了获取这个li修改选中状态，可以通过ref父节点的形式操作
+    //不应该给每个li都绑定click事件，冒泡到父亲更合理
+    pagination.push(<li id={j} onClick={this.onChange} className="active"><span>1</span></li>);
+    for (let b = 1; b < i / 5; b++) {
+      pagination.push(<li id={b + 1} onClick={this.onChange}><span>{b + 1}</span></li>);
+    }
+
+    this.setState({
+      baba: domList,
+      cp: domList.slice(0, 5),
+      pagination: pagination,
+      max: Math.ceil(i / 5),
+      selected: j
+    });
+  }
+
   render() {
     return (
       //JSX就是Javascript和XML结合的一种格式
       <div>
         <div class="m-b-lg text-center">
           <p>
-            <span class="label bg-light">label</span>
-            <span class="label bg-primary">夸奖</span>
-            <span class="label bg-success">邀约</span>
-            <span class="label bg-info">Info</span>
-            <span class="label bg-dark">dark</span>
-            <span class="label bg-warning">Warning</span>
-            <span class="label bg-danger">Danger</span>
+            <span onClick={this.onFilter} class="label bg-light">夸奖</span>
+            <span onClick={this.onFilter} class="label bg-primary">打压</span>
+            <span onClick={this.onFilter} class="label bg-success">邀约</span>
+            <span onClick={this.onFilter} class="label bg-info">试探</span>
+            <span onClick={this.onFilter} class="label bg-dark">服从性测试</span>
+            <span onClick={this.onFilter} class="label bg-warning">诱惑</span>
+            <span onClick={this.onFilter} class="label bg-danger">引导投资</span>
           </p>
           <p class="m-b-none">
-            <span class="badge">15</span>
-            <span class="badge bg-primary">15</span>
+            <span class="badge"></span>
+            <span class="badge bg-primary"></span>
             <span class="badge bg-success">20</span>
             <span class="badge bg-info">21</span>
             <span class="badge bg-dark">13</span>
@@ -159,7 +248,6 @@ class App extends React.Component {
           </div>
         </section>
       </div>
-
     );
   }
 }
