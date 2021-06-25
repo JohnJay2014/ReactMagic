@@ -1,14 +1,16 @@
 {
-  "main.css": "/ReactMagic/static/css/main.9f00adfe.chunk.css",
-  "main.js": "/ReactMagic/static/js/main.2e81a285.chunk.js",
-  "main.js.map": "/ReactMagic/static/js/main.2e81a285.chunk.js.map",
-  "static/js/1.6a3076c4.chunk.js": "/ReactMagic/static/js/1.6a3076c4.chunk.js",
-  "static/js/1.6a3076c4.chunk.js.map": "/ReactMagic/static/js/1.6a3076c4.chunk.js.map",
+  "main.css": "/ReactMagic/static/css/main.e18316f8.chunk.css",
+  "main.js": "/ReactMagic/static/js/main.8f498197.chunk.js",
+  "main.js.map": "/ReactMagic/static/js/main.8f498197.chunk.js.map",
+  "static/js/1.0b45ad7f.chunk.js": "/ReactMagic/static/js/1.0b45ad7f.chunk.js",
+  "static/js/1.0b45ad7f.chunk.js.map": "/ReactMagic/static/js/1.0b45ad7f.chunk.js.map",
   "runtime~main.js": "/ReactMagic/static/js/runtime~main.579ecb40.js",
   "runtime~main.js.map": "/ReactMagic/static/js/runtime~main.579ecb40.js.map",
   "static/media/girl.jpg": "/ReactMagic/static/media/girl.6f3ef122.jpg",
-  "static/css/main.9f00adfe.chunk.css.map": "/ReactMagic/static/css/main.9f00adfe.chunk.css.map",
+  "static/media/longzhifubao.jpg": "/ReactMagic/static/media/longzhifubao.e1540dc7.jpg",
+  "static/media/longweixin.jpg": "/ReactMagic/static/media/longweixin.1d143a01.jpg",
+  "static/css/main.e18316f8.chunk.css.map": "/ReactMagic/static/css/main.e18316f8.chunk.css.map",
   "index.html": "/ReactMagic/index.html",
-  "precache-manifest.de6532f92034fc0069bb06c77d4b553d.js": "/ReactMagic/precache-manifest.de6532f92034fc0069bb06c77d4b553d.js",
+  "precache-manifest.75d24fbb7adbe607f6ef336bed4e8367.js": "/ReactMagic/precache-manifest.75d24fbb7adbe607f6ef336bed4e8367.js",
   "service-worker.js": "/ReactMagic/service-worker.js"
 }

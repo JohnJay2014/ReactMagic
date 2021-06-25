@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-//import 'antd/dist/antd.css';
+//import 'bootstrap/dist/css/bootstrap.css';
+// Put any other imports below so that CSS from your
+// components takes precedence over default styles.
 import './index.css';
 import List from './List';
 import * as serviceWorker from './serviceWorker';
